@@ -30,7 +30,7 @@ def run(argv=None):
                         dest='output',
                         required=False,
                         help='Output BQ table to write results to.',
-                        default='lake.Online')
+                        default='lake.head_Online')
 
     # Parse arguments from the command line.
     known_args, pipeline_args = parser.parse_known_args(argv)
