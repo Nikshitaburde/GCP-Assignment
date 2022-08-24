@@ -4,6 +4,7 @@ import re
 
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
+from apache_beam.options.pipeline_options import SetupOptions
 
 class DataIngestion:
     def parse_method(self, string_input):
@@ -25,10 +26,9 @@ def run(argv=None):
         # This example file contains a total of only 10 lines.
         # Useful for developing on a small set of data.
         default='gs://my-firstbucket1/Online.csv')
-    
     parser.add_argument('--output',
                         dest='output',
-                        required=False,
+                        required=True,
                         help='Output BQ table to write results to.',
                         default='lake.head_Online')
 
